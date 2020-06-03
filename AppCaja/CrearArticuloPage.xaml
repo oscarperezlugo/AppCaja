@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppCaja.CrearArticuloPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="Fill" VerticalOptions="Start" Margin="2,10,2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="3.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="X" Grid.Row="0" Grid.Column="0" Clicked="X_Clicked"/>
+                <Label Text="CREAR NUEVO ARTICULO" Grid.Row="0" Grid.Column="1"/>
+                <Button Text="GUARADR" Grid.Row="0" Grid.Column="2" Clicked="Save_Clicked"/>
+            </Grid>
+            <ScrollView>
+                <Grid Margin="10,5,10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Text="ARTICULO" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" Grid.Column="0"/>
+                    <Entry  x:Name="Nombre" Placeholder="Nombre" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="1" Grid.Column="0"/>
+                    <Entry  x:Name="SKU" Placeholder="SKU" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="2" Grid.Column="0"/>
+                    <Entry  x:Name="Cantiad" Placeholder="Existenciaa" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="3" Grid.Column="0"/>
+                    <Picker x:Name="Unidad" Title="UNIDAD" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="4" Grid.Column="0">
+                        <Picker.Items>
+                            <x:String>Por Articulo</x:String>
+                            <x:String>Por Gramo</x:String>
+                            <x:String>Por KiloGramo</x:String>
+                            <x:String>Por Hora</x:String>
+                            <x:String>Por Litro</x:String>
+                            <x:String>Por Metro</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Picker x:Name="Categoria" Title="CATEGORIA" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="5" Grid.Column="0"/>
+                    <Entry  x:Name="Descripcion" Placeholder="Descripcion" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="6" Grid.Column="0"/>
+                    <Entry  x:Name="Precio" Placeholder="Precio" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="7" Grid.Column="0" Keyboard="Numeric"/>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

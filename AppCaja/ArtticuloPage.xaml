@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppCaja.ArtticuloPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="Fill" VerticalOptions="Start" Margin="2,10,2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5.5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="X" Grid.Row="0" Grid.Column="0" Clicked="X_Clicked"/>
+                <Label Text="TODOS LOS ARTICULOS" Grid.Row="0" Grid.Column="1"/>
+                <SearchBar x:Name="SearchBar" Placeholder="Buscar en todos los articulos"  PlaceholderColor="LightGray" BackgroundColor="White" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextChanged="Handle_SearchButtonPressed"/>
+            </Grid>
+            <ScrollView>
+                <Grid Margin="10,5,10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1200"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="CREAR NUEVO ARTICULO" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Fill" Clicked="crearClicked"/>
+                    <ListView x:Name="ListaArticulos" BackgroundColor="White" VerticalOptions="Fill" Grid.Row="1" Grid.Column="0" SeparatorColor="White">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Articulo1}"  Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"   TextColor="DarkBlue"  />
+                                        <Label Text="{Binding Precio}"  Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"   TextColor="DarkBlue"  />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

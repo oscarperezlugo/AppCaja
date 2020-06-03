@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppCaja.MenuPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Blue">
+            <Grid Margin="10,10,10,10" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="MENU" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="0"/>
+                <Button Text="CLIENTES" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="1" Clicked="clientesClicked"/>
+                <Button Text="ARTICULOS" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="2" Clicked="articulosClicked"/>
+                <Button Text="DESCUENTOS" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="3" Clicked="descuentoClicked"/>
+                <Button Text="CATEGORIA" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="4" Clicked="categoriaClicked"/>
+                <Button Text="TECLADO" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="5" Clicked="tecladoClicked"/>
+                <Button Text="back" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="6" Clicked="backClicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
