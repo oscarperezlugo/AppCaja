@@ -19,7 +19,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Text="menu" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center" Clicked="menuClicked"/>
                 <Button x:Name="indicador" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ventaClicked"/>
-                <Label x:Name="total" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="total" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="CobrarClicked"/>
                 <Entry x:Name="nota" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Agregar una nota"/>
                 <Label x:Name="monto" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
                 <Label Text="$a" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,15,0"/>
@@ -74,8 +74,8 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Button Text="menu" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center" Clicked="menuClicked"/>
-                <Button x:Name="indicadordos" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label x:Name="totaldos" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="indicadordos" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ventaClicked"/>
+                <Button x:Name="totaldos" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="CobrarClicked"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -122,8 +122,8 @@
         </StackLayout>
     </ContentPage>
     <ContentPage x:Name="libreria">
-        <StackLayout>
-            <Grid Margin="0,10,0,10">
+        <StackLayout Margin="0,15,0,0">
+            <Grid Margin="0,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="3*"/>
@@ -133,8 +133,8 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Button Text="menu" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center" Clicked="menuClicked"/>
-                <Button x:Name="indicadortres" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label x:Name="totaltres" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="indicadortres" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ventaClicked"/>
+                <Button x:Name="totaltres" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="CobrarClicked"/>
             </Grid>
             <Grid HorizontalOptions="Fill" VerticalOptions="Start" Margin="2,10,2,0">
                 <Grid.RowDefinitions>
@@ -147,8 +147,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Text="X" Grid.Row="0" Grid.Column="0" Clicked="tecladoClicked"/>
                 <Label Text="TODOS LOS ARTICULOS" Grid.Row="0" Grid.Column="1"/>
-                <!--TextChanged="SearchButtonPressed"-->
-                <SearchBar x:Name="SearchBar" Placeholder="Buscar en todos los articulos"  PlaceholderColor="LightGray" BackgroundColor="White" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <SearchBar x:Name="SearchBar" Placeholder="Buscar en todos los articulos"  PlaceholderColor="LightGray" BackgroundColor="White" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextChanged="Handle_SearchButtonPressed"/>
             </Grid>
             <ScrollView>
                 <Grid Margin="10,5,10,5">
@@ -160,7 +159,185 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button Text="CREAR NUEVO ARTICULO" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Fill" Clicked="crearClicked"/>
-                    <ListView x:Name="ListaArticulos" BackgroundColor="White" VerticalOptions="Fill" Grid.Row="1" Grid.Column="0" SeparatorColor="LightGray"/>
+                    <ListView x:Name="ListaArticulos" BackgroundColor="White" VerticalOptions="Fill" Grid.Row="1"  SeparatorColor="LightGray" ItemSelected="EventClicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Articulo1}"  Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"   TextColor="DarkBlue"  />
+                                        <Label Text="{Binding Precio}"  Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"   TextColor="DarkBlue"  />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="Subtotal">
+        <StackLayout Padding="0,15,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="menu" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center" Clicked="menuClicked"/>
+                <Button Text="AGREGAR DESCUENTO" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="DescuentoClicked"/>
+                <Label x:Name="clientefactura" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label x:Name="fechafactura" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="11*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ListView Grid.Row="0" x:Name="FacturaFinal" SeparatorColor="White">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Renglon}" Grid.Column="0" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Nota}" Grid.Column="1" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Precio}" Grid.Column="2" VerticalOptions="Center"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="SUB-TOTAL $a" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label x:Name="totalcuatro" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Text="TOTAL $a" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label x:Name="totalcinco" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Button Text="AGRAGAR CLIENTE" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ClienteClicked" />
+                <Button Text="MERCADOPAGO" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="mercadopagoClicked" />
+                <Button Text="EFECTIVO" Grid.Row="1" Grid.Column="2"  HorizontalOptions="Center" VerticalOptions="Center" Clicked="efectivoClicked" />
+            </Grid>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="clientes">
+        <StackLayout Margin="0,15,0,0">
+            <Grid HorizontalOptions="Fill" VerticalOptions="Start" Margin="2,10,2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5.5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="X" Grid.Row="0" Grid.Column="0" Clicked="tecladoClicked"/>
+                <Label Text="AÑADIR CLIENTE" Grid.Row="0" Grid.Column="1"/>
+                <SearchBar x:Name="SearchBar2" Placeholder="Buscar en todos los articulos"  PlaceholderColor="LightGray" BackgroundColor="White" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextChanged="Handle_SearchButtonPresseddos"/>
+            </Grid>
+            <ScrollView>
+                <Grid Margin="10,5,10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1200"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="ListaClientes" BackgroundColor="White" VerticalOptions="Fill" Grid.Row="1"  SeparatorColor="LightGray" ItemSelected="EventdosClicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Cliente1}"  Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"   TextColor="DarkBlue"  />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="descuentospage">
+        <StackLayout Margin="0,15,0,0">
+            <Grid HorizontalOptions="Fill" VerticalOptions="Start" Margin="2,10,2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="5.5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="X" Grid.Row="0" Grid.Column="0" Clicked="tecladoClicked"/>
+                <Label Text="AÑADIR DESCUENTO" Grid.Row="0" Grid.Column="1"/>
+                <SearchBar x:Name="SearchBar3" Placeholder="Buscar en todos los descuentos"  PlaceholderColor="LightGray" BackgroundColor="White" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextChanged="Handle_SearchButtonPressedtres"/>
+            </Grid>
+            <ScrollView>
+                <Grid Margin="10,5,10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1200"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="ListaDescuentos" BackgroundColor="White" VerticalOptions="Fill" Grid.Row="1"  SeparatorColor="LightGray" ItemSelected="EventtresClicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Descuento1}"  Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"   TextColor="DarkBlue"  />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </Grid>
             </ScrollView>
         </StackLayout>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace AppCaja.Conexiones
 {
@@ -23,6 +24,25 @@ namespace AppCaja.Conexiones
                 }
 
                 return cliente;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Descuento[] getDescuento()
+        {
+            try
+            {
+                Descuento[] descuento;
+                var URLWebAPI = "https://www.caja.somee.com/api/Descuentoes";
+                using (var Client = new System.Net.Http.HttpClient())
+                {
+                    var JSON = Client.GetStringAsync(URLWebAPI);
+                    descuento = Newtonsoft.Json.JsonConvert.DeserializeObject<Descuento[]>(JSON.Result);
+                }
+
+                return descuento;
             }
             catch (Exception ex)
             {
@@ -161,6 +181,82 @@ namespace AppCaja.Conexiones
                 var response = await client.SendAsync(request).ConfigureAwait(false);
                 string dataResult = response.Content.ReadAsStringAsync().Result;
                 Descuento result = JsonConvert.DeserializeObject<Descuento>(dataResult);
+                return result;
+            }
+        } 
+        public async Task<Lineas> postLinea(Lineas linea)
+        {
+            Lineas linear = new Lineas();
+            linear.Articulo = linea.Articulo;
+            linear.Cantidad = linea.Cantidad;
+            linear.Precio = linea.Precio;
+            linear.Renglon = linea.Renglon;
+            linear.Venta = linea.Venta;
+            var jsonObj = JsonConvert.SerializeObject(linear);
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(jsonObj.ToString(), Encoding.UTF8, "application/json");
+                var request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri("https://caja.somee.com/api/Lineas"),
+                    Method = HttpMethod.Post,
+                    Content = content
+                };
+                var response = await client.SendAsync(request).ConfigureAwait(false);
+                string dataResult = response.Content.ReadAsStringAsync().Result;
+                Lineas result = JsonConvert.DeserializeObject<Lineas>(dataResult);
+                return result;
+            }
+        }
+        public async Task<Cabecera> postCabecera(Cabecera cabecera)
+        {
+            Cabecera cabecerar = new Cabecera();
+            cabecerar.Cliente = cabecera.Cliente;
+            cabecerar.Venta = cabecera.Venta;
+            cabecerar.Fecha = cabecera.Fecha;
+            cabecerar.Descuento = cabecera.Descuento;
+            cabecerar.Subtotal = cabecera.Subtotal;
+            cabecerar.Total = cabecera.Total;
+            var jsonObj = JsonConvert.SerializeObject(cabecerar);
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(jsonObj.ToString(), Encoding.UTF8, "application/json");
+                var request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri("https://caja.somee.com/api/Cabeceras"),
+                    Method = HttpMethod.Post,
+                    Content = content
+                };
+                var response = await client.SendAsync(request).ConfigureAwait(false);
+                string dataResult = response.Content.ReadAsStringAsync().Result;
+                Cabecera result = JsonConvert.DeserializeObject<Cabecera>(dataResult);
+                return result;
+            }
+        }
+        public async Task<Cabecera> putCabecera(Cabecera cabecera)
+        {
+
+            string iD = cabecera.Venta;
+            Cabecera cabecerar = new Cabecera();
+            cabecerar.Cliente = cabecera.Cliente;
+            cabecerar.Venta = cabecera.Venta;
+            cabecerar.Fecha = cabecera.Fecha;
+            cabecerar.Descuento = cabecera.Descuento;
+            cabecerar.Subtotal = cabecera.Subtotal;
+            cabecerar.Total = cabecera.Total;
+            var jsonObj = JsonConvert.SerializeObject(cabecerar);
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(jsonObj.ToString(), Encoding.UTF8, "application/json");
+                var request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri("https://caja.somee.com/api/Cabeceras/"+iD+""),
+                    Method = HttpMethod.Put,
+                    Content = content
+                };
+                var response = await client.SendAsync(request).ConfigureAwait(false);
+                string dataResult = response.Content.ReadAsStringAsync().Result;
+                Cabecera result = cabecerar;                
                 return result;
             }
         }
