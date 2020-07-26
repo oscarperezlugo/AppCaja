@@ -19,6 +19,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="RazorTest.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RazorTest.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="ReinicioPage.xaml.cs">
+      <DependentUpon>ReinicioPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="ArtticuloPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -40,8 +51,18 @@
     <EmbeddedResource Update="MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MetodoPagoPage.xaml">
+    <EmbeddedResource Update="ReinicioPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="VueltoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="RazorTest.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>RazorTest.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

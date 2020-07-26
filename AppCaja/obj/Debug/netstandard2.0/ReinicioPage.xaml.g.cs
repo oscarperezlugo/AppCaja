@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppCaja.MetodoPagoPage.xaml", "MetodoPagoPage.xaml", typeof(global::AppCaja.MetodoPagoPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("AppCaja.ReinicioPage.xaml", "ReinicioPage.xaml", typeof(global::AppCaja.ReinicioPage))]
 
 namespace AppCaja {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MetodoPagoPage.xaml")]
-    public partial class MetodoPagoPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("ReinicioPage.xaml")]
+    public partial class ReinicioPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MetodoPagoPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ReinicioPage));
         }
     }
 }

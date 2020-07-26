@@ -205,10 +205,13 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <ListView Grid.Row="0" x:Name="FacturaFinal" SeparatorColor="White">
+                <ListView Grid.Row="0" x:Name="FacturaFinal" SeparatorColor="White" IsPullToRefreshEnabled="true" ItemSelected="FacturaFinal_ItemSelected" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="DeleteClicked" Text="Delete" IsDestructive="True"  />
+                                </ViewCell.ContextActions>
                                 <StackLayout Margin="1">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -243,10 +246,11 @@
                 <Label Text="SUB-TOTAL $a" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" />
                 <Label x:Name="totalcuatro" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
                 <Label Text="TOTAL $a" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label x:Name="descuentonombre" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" />
                 <Label x:Name="totalcinco" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
                 <Button Text="AGRAGAR CLIENTE" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ClienteClicked" />
-                <Button Text="MERCADOPAGO" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="mercadopagoClicked" />
-                <Button Text="EFECTIVO" Grid.Row="1" Grid.Column="2"  HorizontalOptions="Center" VerticalOptions="Center" Clicked="efectivoClicked" />
+                <Button Text="MERCADOPAGO" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="mercadopagoClicked" />
+                <Button Text="EFECTIVO" Grid.Row="2" Grid.Column="2"  HorizontalOptions="Center" VerticalOptions="Center" Clicked="efectivoClicked" />
             </Grid>
         </StackLayout>
     </ContentPage>

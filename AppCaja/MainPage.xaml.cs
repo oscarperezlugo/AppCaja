@@ -6,10 +6,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace AppCaja
 {
@@ -30,8 +33,10 @@ namespace AppCaja
         int N;
         string D;
         string M;
+        double E;
         string VENTA;
         string FECHA;
+        double totalrestar;
         IUserDialogs Dialogs = UserDialogs.Instance;
         public MainPage()
         {
@@ -74,6 +79,9 @@ namespace AppCaja
         }
         protected override void OnAppearing()
         {
+            
+            
+            
 
             if (montoind != "0")
             {
@@ -84,6 +92,7 @@ namespace AppCaja
                 indicadortres.Text = valorind;
                 totaltres.Text = "Cobrar $a " + montoind + "";
                 totalcuatro.Text = "" + montoind + "";
+                
             }
             else
             {
@@ -327,6 +336,8 @@ namespace AppCaja
         private void CobrarClicked(object sender, EventArgs e)
         {
             fechafactura.Text = FECHA;
+            totalcinco.Text = "" + montoind + "";
+            descuentonombre.Text = "SIN DESCUENTO";
             CurrentPage = Subtotal;
         }
         private void ClienteClicked(object sender, EventArgs e)
@@ -378,6 +389,7 @@ namespace AppCaja
             };
             Lineas.Add(linea);
             Factura.ItemsSource = Lineas;
+            FacturaFinal.ItemsSource = Lineas;
             Repositorio repositorio = new Repositorio();
             if (N == 1)
             {
@@ -425,7 +437,9 @@ namespace AppCaja
             double totalprecio = Double.Parse(montoind);
             double preciofinal = totalprecio * ((100 - descuento)/100);
             totalcinco.Text = preciofinal.ToString();
-            D = obj.Descuento1;            
+            D = obj.Descuento1;
+            E = Double.Parse(obj.Porcentaje.ToString());
+            descuentonombre.Text = D;
             CurrentPage = Subtotal;
         }
         private async void mercadopagoClicked(object sender, EventArgs e)
@@ -444,7 +458,11 @@ namespace AppCaja
             Dialogs.ShowLoading("VENTA EXITOSA"); 
             await Task.Delay(2000);
             Dialogs.HideLoading();
-            
+            VueltoPage myHomePage = new VueltoPage(cabecera);
+            NavigationPage.SetHasNavigationBar(myHomePage, false);
+            await Navigation.PushModalAsync(myHomePage);
+
+
         }
         private async void efectivoClicked(object sender, EventArgs e)
         {
@@ -462,7 +480,37 @@ namespace AppCaja
             Dialogs.ShowLoading("VENTA EXITOSA"); 
             await Task.Delay(2000);
             Dialogs.HideLoading();
+            string result = await DisplayPromptAsync("VUELTO", "INSERTE PAGO");
+            Decimal vuelto = Decimal.Parse(result) - total;
+            string vueltotxt = vuelto.ToString();
+            bool answer = await DisplayAlert("EL VUELTO ES " + vueltotxt + "", "¿Desea ticket o recibo?", "TICKET", "RECIBO");
+            
+            //VueltoPage myHomePage = new VueltoPage(cabecera);
+            //NavigationPage.SetHasNavigationBar(myHomePage, false);
+            //await Navigation.PushModalAsync(myHomePage);
+        }
+        public void DeleteClicked(object sender, EventArgs e)
+        {
+            var linea = FacturaFinal.SelectedItem;
+            Lineas.Remove((Linea)linea);
+            double rebaja = totalrestar * ((100 - E) / 100);
+            total.Text = "Cobrar $a " + totalrestar + "";
+            totaldos.Text = "Cobrar $a " + totalrestar + "";
+            totaltres.Text = "Cobrar $a " + totalrestar + "";
+            totalcuatro.Text = "" + totalrestar + "";
+            totalcinco.Text = "" + rebaja + "";
+
+        }
+
+        private void FacturaFinal_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var obj = (Linea)e.SelectedItem;
+            double preciomedio = Double.Parse(obj.Precio);
+            double preciofinal = Double.Parse(totalcuatro.Text);
+            double resta = preciofinal - preciomedio;
+            totalrestar = resta;
+            
         }
     }
-   
+
 }

@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppCaja.MetodoPagoPage">
+             x:Class="AppCaja.VueltoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="METODO DE PAGO" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Button Text="EFECTIVO" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Button Text="MERCADOPAGO" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="monto" Text="Welcome to Xamarin.Forms!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="vuelto" Placeholder="0,00" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Button  Text="CALCULAR Y PROCESAR" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
