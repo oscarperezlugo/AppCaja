@@ -6,8 +6,8 @@
              mc:Ignorable="d"
              x:Class="AppCaja.MainPage">
     <ContentPage x:Name="teclado">
-        <StackLayout VerticalOptions="FillAndExpand">
-            <Grid VerticalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="LightGray">
+            <Grid VerticalOptions="FillAndExpand" BackgroundColor="LightGray" Padding="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="3*"/>
@@ -16,15 +16,16 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Button Text="menu" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center" Clicked="menuClicked"/>
-                <Button x:Name="indicador" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ventaClicked"/>
-                <Button x:Name="total" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="CobrarClicked"/>
-                <Entry x:Name="nota" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Agregar una nota"/>
-                <Label x:Name="monto" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
-                <Label Text="$a" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,15,0"/>
+                <Button Text="&#xf0c9;" Grid.Row="0" Grid.Column="0" FontFamily="{StaticResource FontAwesomeSolid}" HorizontalOptions="Start" VerticalOptions="Center" Clicked="menuClicked" FontSize="24" TextColor="DarkGray"/>
+                <Button x:Name="indicador" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="ventaClicked" BackgroundColor="Transparent" TextColor="White" FontFamily="Roboto" CornerRadius="5" FontAttributes="Bold"/>
+                <Button x:Name="total" Grid.Row="1" Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="Center" Clicked="CobrarClicked" TextColor="White" FontAttributes="Bold" FontSize="Title"/>
+                <Entry x:Name="nota" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Agregar una nota" BackgroundColor="DarkGray"  PlaceholderColor="White"/>
+                <Label x:Name="monto" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent" FontSize="14"/>
+                <Label Text="&#xf571;"  Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,15,0" FontFamily="{StaticResource FontAwesomeSolid}" BackgroundColor="Transparent" FontSize="24" TextColor="White"/>
             </Grid>
-            <Grid VerticalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand" Padding="2" BackgroundColor="LightGray">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="4*"/>
@@ -36,20 +37,20 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Button Text="1" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="unoClicked"/>
-                <Button Text="2" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Clicked="dosClicked"/>
-                <Button Text="3" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="tresClicked"/>
-                <Button Text="4" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="cuatroClicked"/>
-                <Button Text="5" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Clicked="cincoClicked"/>
-                <Button Text="6" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="seisClicked"/>
-                <Button Text="7" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="sieteClicked"/>
-                <Button Text="8" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ochoClicked"/>
-                <Button Text="9" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="nueveClicked"/>
-                <Button Text="C" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="cClicked"/>
-                <Button Text="0" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ceroClicked"/>
-                <Button Text="+" Grid.Row="3" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Clicked="masClicked"/>
+                <Button Text="1" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="unoClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="2" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="dosClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="3" Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="tresClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="4" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="cuatroClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="5" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="cincoClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="6" Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="seisClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="7" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="sieteClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="8" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="ochoClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="9" Grid.Row="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="nueveClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="&#xf2ed;" FontFamily="{StaticResource FontAwesomeSolid}" Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="cClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="Red" CornerRadius="5" Padding="2"/>
+                <Button Text="0" Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="ceroClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="DarkGray" CornerRadius="5" Padding="2"/>
+                <Button Text="&#xf2f6;" FontFamily="{StaticResource FontAwesomeSolid}"  Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="masClicked" TextColor="White" FontAttributes="Bold" BackgroundColor="Green" CornerRadius="5" Padding="2"/>
             </Grid>
-            <Grid VerticalOptions="End">
+            <Grid VerticalOptions="End"  Padding="2" BackgroundColor="LightGray">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
@@ -57,8 +58,8 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Button Text="Teclado" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="tecladoClicked"/>
-                <Button Text="Libreria" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Clicked="libreriaClicked"/>
+                <Button Text="&#xf11c;" FontFamily="{StaticResource FontAwesomeSolid}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="tecladoClicked" BackgroundColor="Transparent" TextColor="DarkGray"/>
+                <Button Text="&#xf02d;" FontFamily="{StaticResource FontAwesomeSolid}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Clicked="libreriaClicked" BackgroundColor="Transparent" TextColor="DarkGray"/>
             </Grid>
         </StackLayout>
     </ContentPage>

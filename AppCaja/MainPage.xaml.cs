@@ -86,11 +86,11 @@ namespace AppCaja
             if (montoind != "0")
             {
                 indicador.Text = valorind;
-                total.Text = "Cobrar $a " + montoind + "";
+                total.Text = "Cobrar $ " + montoind + "";
                 indicadordos.Text = valorind;
-                totaldos.Text = "Cobrar $a " + montoind + "";
+                totaldos.Text = "Cobrar $ " + montoind + "";
                 indicadortres.Text = valorind;
-                totaltres.Text = "Cobrar $a " + montoind + "";
+                totaltres.Text = "Cobrar $ " + montoind + "";
                 totalcuatro.Text = "" + montoind + "";
                 
             }
@@ -262,9 +262,9 @@ namespace AppCaja
             totalbd = decimal.Parse(monto.Text);
             totalfinal = totalfinal + totalsum;
             montoind = totalfinal.ToString();
-            total.Text = "Cobrar $a " + montoind + "";
-            totaldos.Text = "Cobrar $a " + montoind + "";
-            totaltres.Text = "Cobrar $a " + montoind + "";
+            total.Text = "Cobrar $ " + montoind + "";
+            totaldos.Text = "Cobrar $ " + montoind + "";
+            totaltres.Text = "Cobrar $ " + montoind + "";
             totalcuatro.Text = "" + montoind + "";
             monto.Text = "0";
             N = N + 1;
@@ -370,9 +370,9 @@ namespace AppCaja
             totalsum = double.Parse(precio.ToString());
             totalfinal = totalfinal + totalsum;
             montoind = totalfinal.ToString();
-            total.Text = "Cobrar $a " + montoind + "";
-            totaldos.Text = "Cobrar $a " + montoind + "";
-            totaltres.Text = "Cobrar $a " + montoind + "";
+            total.Text = "Cobrar $ " + montoind + "";
+            totaldos.Text = "Cobrar $ " + montoind + "";
+            totaltres.Text = "Cobrar $ " + montoind + "";
             totalcuatro.Text = "" + montoind + "";
             monto.Text = "0";
             N = N + 1;
@@ -494,9 +494,9 @@ namespace AppCaja
             var linea = FacturaFinal.SelectedItem;
             Lineas.Remove((Linea)linea);
             double rebaja = totalrestar * ((100 - E) / 100);
-            total.Text = "Cobrar $a " + totalrestar + "";
-            totaldos.Text = "Cobrar $a " + totalrestar + "";
-            totaltres.Text = "Cobrar $a " + totalrestar + "";
+            total.Text = "Cobrar $ " + totalrestar + "";
+            totaldos.Text = "Cobrar $ " + totalrestar + "";
+            totaltres.Text = "Cobrar $ " + totalrestar + "";
             totalcuatro.Text = "" + totalrestar + "";
             totalcinco.Text = "" + rebaja + "";
 

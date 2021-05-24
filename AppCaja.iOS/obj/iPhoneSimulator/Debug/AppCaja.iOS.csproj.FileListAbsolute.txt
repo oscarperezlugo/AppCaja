@@ -58,7 +58,6 @@ C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\bin\iPhoneSimulator\Debug\zh-Han
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\bin\iPhoneSimulator\Debug\AppCaja.dll
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\bin\iPhoneSimulator\Debug\AppCaja.pdb
-C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\Contents.json.ResolveUTIs.stamp
@@ -75,12 +74,12 @@ C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\Icon58
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\Icon40.png.ResolveUTIs.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\Icon29.png.ResolveUTIs.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\Icon20.png.ResolveUTIs.stamp
+C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\optimized\
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csprojAssemblyReference.cache
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csproj.CoreCompileInputs.cache
-C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csproj.CopyComplete
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.exe
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.pdb

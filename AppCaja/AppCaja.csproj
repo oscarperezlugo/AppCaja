@@ -11,19 +11,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <None Remove="Resources\Poppins-Regular.ttf" />
+    <None Remove="Resources\Roboto-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="RazorTest.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RazorTest.cshtml</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Resources\Poppins-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.514" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="ReinicioPage.xaml.cs">
       <DependentUpon>ReinicioPage.xaml</DependentUpon>
     </Compile>
@@ -57,12 +62,5 @@
     <EmbeddedResource Update="VueltoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="RazorTest.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>RazorTest.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 </Project>
