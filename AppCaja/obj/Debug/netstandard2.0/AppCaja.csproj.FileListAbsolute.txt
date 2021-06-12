@@ -18,6 +18,6 @@ C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\AppCaja.dll
 C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\ref\AppCaja.dll
 C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\AppCaja.pdb
-C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\AppCaja.csprojAssemblyReference.cache
 C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\ReinicioPage.xaml.g.cs
 C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\VueltoPage.xaml.g.cs
+C:\Users\oscar\source\repos\AppCaja\AppCaja\obj\Debug\netstandard2.0\AppCaja.csproj.AssemblyReference.cache

@@ -78,7 +78,6 @@ C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\ibtool
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\optimized\
-C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csprojAssemblyReference.cache
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csproj.CoreCompileInputs.cache
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csproj.CopyComplete
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.exe
@@ -108,7 +107,7 @@ C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFi
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Forms.Platform.iOS.resources.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\AppCaja.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\AppCaja.pdb.ReferenceCopyLocalPaths.stamp
-C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\AppCaja.iOS.exe.mdb.ReferenceCopyLocalPaths.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\AppCaja.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
+C:\Users\oscar\source\repos\AppCaja\AppCaja.iOS\obj\iPhoneSimulator\Debug\AppCaja.iOS.csproj.AssemblyReference.cache
